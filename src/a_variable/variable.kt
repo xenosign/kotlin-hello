@@ -28,4 +28,7 @@ fun main() {
 
     // 클래스에서는 클래스 타입과 new 사용 불필요
     var person = Person("이효석");
+    println(person.name)
+    person.name = "tetz";
+    println(person.name)
 }
