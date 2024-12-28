@@ -23,7 +23,7 @@ fun main() {
     val name = "이효석";
     println("이름 : $name"); // 이거도 가능 하지만 ${} 추천
 
-    // 백틱처럼 쓰기 -> """ 따옴표 3개
+    // 백틱처럼 쓰기 -> """ 따옴표 3개, trimIndent 가 포함 되어야 함
     val str = """
         ABC
         EFG
