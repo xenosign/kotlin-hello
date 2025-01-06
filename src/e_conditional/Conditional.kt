@@ -1,7 +1,13 @@
 package e_conditional
 
-fun validateScoreIsNotNegative(score: Int) {
-    if (score < 0) throw IllegalArgumentException("${score} 는 양수여야 합니다!")
+const val NEGATIVE_SCORE_MESSAGE = "는 양수여야 합니다!"
+const val OVER_SCORE_MESSAGE = "는 100 이하여야 합니다!"
+const val IN_RANGE_MESSAGE = "는 0 ~ 100 사이의 숫자 입니다"
+const val OUT_RANGE_MESSAGE = "는 0 ~ 100 사이의 숫자가 아닙니다"
+
+fun validateScore(score: Int) {
+    require(score >= 0) { "$score $NEGATIVE_SCORE_MESSAGE" };
+    require(score <= 100) { "$score $OVER_SCORE_MESSAGE" };
 }
 
 fun getPassOrFail(score: Int): String {
@@ -34,11 +40,10 @@ fun getGrade(score: Int): String {
 
 // in 과 .. 를 사용하면 간단하게 표현 가능
 fun isScoreInHundred(score: Int): String {
-    // if (0 <= score && score <= 100) 과 같음
     return if (score in 0..100) {
-        "${score} 는 0 ~ 100 사이의 숫자 입니다";
+        "$score $IN_RANGE_MESSAGE";
     } else {
-        "${score} 는 0 ~ 100 사이의 숫자가 아닙니다";
+        "$score $OUT_RANGE_MESSAGE";
     }
 }
 
