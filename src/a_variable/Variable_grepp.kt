@@ -15,4 +15,7 @@ fun main() {
 
     var formatValue: String = String.format("%s %s", "Hello", "Kotlin");
     println(formatValue);
+
+    var num: Int;
+    // println(num); Err 발생 
 }
